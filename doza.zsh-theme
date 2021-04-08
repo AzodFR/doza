@@ -13,14 +13,12 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[grey]%}❗️  "
 get_prompt() {
 	
 	echo -n "╭─ %(?.%{$FG[034]%}.%{$FG[124]%})$USER %{$FG[011]%}:: "
-	echo "%{$BG[236]%}%{$FG[015]%} %0~ %f%k"
+	echo "%{$BG[236]%}%{$FG[015]%} %0~ %f%k $(git_prompt_info) $(git_prompt_status)"
 	printf "╰─o "
 	echo -n " "
 }
 
 get_right() {
-	echo -n "$(git_prompt_info) "
-	echo -n "$(git_prompt_status)"
 	echo  "%{$BG[236]%}%{$FG[124]%} %T %f%k"
 
 }
